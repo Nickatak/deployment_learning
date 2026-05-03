@@ -1,44 +1,52 @@
 import Image from "next/image";
 
 const hours = [
-  { days: "Monday-Wednesday", time: "9:00am-9:00pm" },
-  { days: "Thursday & Friday", time: "9:00am-11:00pm" },
-  { days: "Saturday & Sunday", time: "9:00am-12:00am" },
+  { days: "Monday-Wednesday", time: "8:00am-7:00pm" },
+  { days: "Thursday & Friday", time: "8:00am-9:00pm" },
+  { days: "Saturday & Sunday", time: "8:00am-12:00am" },
 ];
 
 export default function LocationHours() {
   return (
-    <section id="location" className="bg-sky py-16">
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 md:grid-cols-2">
-        <article className="rounded-lg bg-cream p-6">
-          <h2 className="font-display text-3xl italic text-navy">Location</h2>
-          <div className="mt-4 grid grid-cols-[auto_1fr] items-center gap-4">
-            <div className="relative h-28 w-28 overflow-hidden rounded">
+    <section id="location" className="bg-white py-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-8 md:grid-cols-2">
+        <article className="bg-sky-deep p-10 md:p-14">
+          <h2 className="font-display text-5xl font-black italic text-sky md:text-6xl">
+            Location
+          </h2>
+
+          <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+            <div className="relative aspect-square w-full max-w-[220px] shrink-0 overflow-hidden">
               <Image
                 src="/images/location-map.png"
-                alt="Map to Frosty Delights"
+                alt="Map to Frozen Delights"
                 fill
-                sizes="7rem"
+                sizes="220px"
                 className="object-cover"
               />
             </div>
-            <address className="text-sm not-italic leading-relaxed text-navy-ink">
-              123 Sweet Street
+            <address className="text-lg not-italic leading-relaxed text-white">
+              <span className="font-bold">Frozen Delights</span>
               <br />
-              Sundae City, CA 90210
+              1100 N. Grand Ave.
               <br />
-              (555) 123-4567
+              Walnut, CA 91789
+              <br />
+              <span className="mt-2 inline-block">(909) 274-6890</span>
             </address>
           </div>
         </article>
 
-        <article className="rounded-lg bg-cream p-6">
-          <h2 className="font-display text-3xl italic text-navy">Hours</h2>
-          <dl className="mt-4 space-y-3 text-sm text-navy-ink">
+        <article className="bg-sky p-10 md:p-14">
+          <h2 className="font-display text-5xl font-black italic text-sky-deep md:text-6xl">
+            Hours
+          </h2>
+
+          <dl className="mt-6 divide-y-2 divide-sky-deep border-y-2 border-sky-deep">
             {hours.map((row) => (
-              <div key={row.days}>
-                <dt className="font-semibold">{row.days}</dt>
-                <dd>{row.time}</dd>
+              <div key={row.days} className="py-5">
+                <dt className="text-xl font-bold text-sky-deep">{row.days}</dt>
+                <dd className="mt-1 text-lg text-black">{row.time}</dd>
               </div>
             ))}
           </dl>

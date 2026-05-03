@@ -9,31 +9,33 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="bg-sky">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/images/logo.png"
-            alt="Frosty Delights"
-            width={40}
-            height={40}
-            priority
-          />
-        </Link>
+    <header className="bg-sky-deep">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+        <div className="flex items-center gap-10">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="Frosty Delights"
+              width={64}
+              height={64}
+              priority
+            />
+          </Link>
 
-        <ul className="hidden items-center gap-8 text-sm font-medium text-navy-ink md:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="hover:text-navy">
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden items-center gap-10 text-lg font-medium text-white md:flex">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:opacity-80">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <Link
           href="#order"
-          className="rounded-full bg-navy px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-ink"
+          className="rounded-full border-2 border-white px-6 py-2 text-base font-medium text-white transition-colors hover:bg-white hover:text-sky-deep"
         >
           Order Online
         </Link>

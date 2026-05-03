@@ -8,7 +8,7 @@ const images = Array.from({ length: 8 }, (_, i) => ({
 export default function Gallery() {
   return (
     <section className="bg-white py-12">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-4 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-8 md:grid-cols-4">
         {images.map((img) => (
           <div key={img.src} className="relative aspect-square overflow-hidden">
             <Image

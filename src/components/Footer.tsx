@@ -9,12 +9,12 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-sky">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-6 px-6 py-8 md:grid-cols-3">
-        <ul className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-navy-ink md:justify-start">
+    <footer className="bg-sky-deep px-6 py-12 text-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-3">
+        <ul className="flex flex-wrap items-center justify-center gap-8 border-y-2 border-white py-4 text-base font-medium md:justify-start md:gap-10">
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="hover:text-navy">
+              <Link href={link.href} className="hover:opacity-80">
                 {link.label}
               </Link>
             </li>
@@ -25,13 +25,13 @@ export default function Footer() {
           <Image
             src="/images/logo.png"
             alt="Frosty Delights"
-            width={48}
-            height={48}
+            width={80}
+            height={80}
           />
         </div>
 
         <form
-          className="flex w-full items-center gap-2 md:justify-end"
+          className="flex w-full items-stretch overflow-hidden rounded-full border-2 border-white md:justify-self-end md:max-w-sm"
           action="#"
           method="post"
         >
@@ -42,21 +42,23 @@ export default function Footer() {
             id="email"
             name="email"
             type="email"
-            placeholder="Email address"
-            className="w-full rounded-full bg-white px-4 py-2 text-sm text-navy-ink placeholder:text-navy-ink/50 focus:outline-none md:w-64"
+            placeholder="Email"
+            suppressHydrationWarning
+            className="flex-1 bg-transparent px-6 py-3 text-base text-white placeholder:text-white/80 focus:outline-none"
           />
+          <div className="my-2 w-px bg-white/60" aria-hidden />
           <button
             type="submit"
-            className="rounded-full bg-navy px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-ink"
+            className="px-6 text-base font-medium text-white hover:opacity-80"
           >
-            Subscribe
+            Contact
           </button>
         </form>
       </div>
 
-      <div className="border-t border-white/40 py-3 text-center text-xs text-navy-ink/70">
-        Copyright Frosty Delights
-      </div>
+      <p className="mt-10 text-center text-base">
+        Copyright &copy; 2004 Frosty Delights
+      </p>
     </footer>
   );
 }
