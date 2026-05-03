@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(//mnt/c/Users/Nickatak/.ssh/**)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "Read(//tmp/**)"
+    ],
+    "additionalDirectories": [
+      "/mnt/c/Users/Nickatak/.ssh"
+    ]
+  }
+}
